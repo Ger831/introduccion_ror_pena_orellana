@@ -34,8 +34,10 @@
 
       <div class="buttons" style="margin-top:10px; margin-bottom:10px">
         <%= link_to 'Show', pin %>
-        <%= link_to 'Edit', edit_pin_path(pin) %>
+        <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
         <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+        <% end %>
       </div>
     </div>
   </div>
