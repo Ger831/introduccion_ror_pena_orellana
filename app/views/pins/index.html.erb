@@ -13,8 +13,9 @@
     </div>
   </div>
   <br>
-  <% @pins.each do |pin| %>
   <div class="card-columns">
+  <% @pins.each do |pin| %>
+
     <div class="card">
       <img src="<%= pin.photo %>" class="card-img-top img-thumbnail" alt="Card image cap">
       <div class="card-body">
@@ -30,8 +31,9 @@
       </div>
 
     </div>
-  </div><% end %>
 
+  <% end %>
+</div>
 </div>
 
 
