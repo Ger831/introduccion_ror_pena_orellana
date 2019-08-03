@@ -6,48 +6,42 @@
   <div class="row">
     <div class="col">
       <span class="float-right"> <br>
+        <% if user_signed_in? %>
         <%= link_to 'Nuevo pin', new_pin_path, :class => "btn btn-primary" %>
       </span>
+      <% end %>
     </div>
   </div>
   <br>
-
-
-
-
 
   <% @pins.each do |pin| %>
 
 
-
-
-  <div class="card-deck">
-    <div class="card" style="width: 18rem;">
-      <div class="card-img-top">
-        <%= image_tag pin.photo, :class=> "img-fluid" %>
+  <div class="card-columns">
+    <div class="card-group">
+      <div class="card">
+        <img src=" <%= pin.photo %>" class="card-img-top">
       </div>
-      <div class="card-body">
-        <%= pin.name %>
-      </div>
+    
+        <div class="card-body">
+          <h5 class="card-title"> <%= pin.name %></h5>
+          <p class="card-text"><%= pin.description %></p>
 
-      <%= pin.description %>
 
-      <div class="buttons" style="margin-top:10px; margin-bottom:10px">
-        <%= link_to 'Show', pin %>
-        <% if user_signed_in? %>
-        <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
-        <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
-        <% end %>
+          <div class="buttons" style="margin-top:10px; margin-bottom:10px">
+            <%= link_to 'Show', pin %>
+            <% if user_signed_in? %>
+            <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
+            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
+    
   </div>
-
-
 
   <% end %>
 
   <br>
-
-
-
 </div>
