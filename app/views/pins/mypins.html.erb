@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>Pins</h1>
+<div class="jumbotron">  <h1>Mis Pins</h1> </div>
 
   <div class="row">
     <div class="col">
@@ -10,18 +10,14 @@
     </div>
   </div>
   <br>
+  <div class="card-columns">
   <% @pins.each do |pin| %>
-  <div class="card-deck">
-    <div class="card" style="width: 18rem;">
-      <div class="card-img-top">
-        <%= image_tag pin.photo, :class=> "img-fluid" %>
-      </div>
-      <div class="card-body">
-        <%= pin.name %>
-      </div>
-
-      <%= pin.description %>
-
+  
+    <div class="card">
+    <img src="<%= pin.photo %>" class="card-img-top img-thumbnail" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= pin.name %></h5>
+      <p class="card-text"><%= pin.description %></p>
       <div class="buttons" style="margin-top:10px; margin-bottom:10px">
         <%= link_to 'Show', pin %>
         <% if user_signed_in? %>
@@ -30,14 +26,14 @@
         <% end %>
       </div>
     </div>
+
   </div>
 
-
-
-  <% end %>
-
-  <br>
+<% end %>
+</div>
+</div>
 
 
 
+<br>
 </div>
