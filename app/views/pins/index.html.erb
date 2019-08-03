@@ -1,17 +1,10 @@
+<div class="jumbotron">  <h1>Pins</h1> </div>
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <div class="jumbotron">  <h1>Pins</h1> </div>
+ 
 
-  <div class="row">
-    <div class="col">
-      <span class="float-right"> <br>
-        <% if user_signed_in? %>
-        <%= link_to 'Nuevo pin', new_pin_path, :class => "btn btn-primary" %>
-      </span>
-      <% end %>
-    </div>
-  </div>
+  
   <br>
   <div class="card-columns">
   <% @pins.each do |pin| %>
