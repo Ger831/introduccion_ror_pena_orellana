@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="card-group">
+<div class="card">
+<div class="card-header"><center><%= @pin.name %></center></div>
+<img src="<%= @pin.photo %>" class="card-img-top img-thumbnail" alt="Card image cap">
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @pin.name %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag(@pin.photo, :style => 'width:500px') %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
-<% if user_signed_in? %>
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<% end %>
-<%= link_to 'Back', pins_path %>
+<div class="card-body center">
+  <p class="card-text"><%= @pin.description %></p>
+  <div class="buttons" style="margin-top:10px; margin-bottom:10px">
+  <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_pin_path(@pin) %> |
+  <% end %>
+  <%= link_to 'Back', pins_path %>
+  </div>
+</div>
+</div>
+</div>
+</div>
